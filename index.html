@@ -17,6 +17,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src="moment.js"></script>
     <script type="text/javascript" src="./assets/javascript/app.js"></script>
     <title>Train Scheduler</title>
 </head>
@@ -40,7 +42,7 @@
                         Current Train Schedule
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped">
+                        <table class="table table-striped" id="train-table">
                             <thead>
                                 <tr>
                                     <th scope="col">Train Name</th>
@@ -75,25 +77,25 @@
                     <div class="card-body">
                         <form>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">Train Name</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                <label for="train-name">Train Name</label>
+                                <input type="text" class="form-control" id="train-name" placeholder="">
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput2">Destination</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+                                <label for="destination">Destination</label>
+                                <input type="text" class="form-control" id="destination" placeholder="">
                             </div>
                         </form>
                         <form>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">First Train Time (HH:mm - military time)</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                <label for="first-time">First Train Time (HH:mm - military time)</label>
+                                <input type="text" class="form-control" id="first-time" placeholder="">
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput2">Frequency (minutes)</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+                                <label for="frequency">Frequency (minutes)</label>
+                                <input type="text" class="form-control" id="frequency" placeholder="">
                             </div>
                         </form>
-                        <button type="button" class="btn btn-info">Submit</button>
+                        <button type="button" class="btn btn-info submitBtn">Submit</button>
                     </div>
                 </div>
             </div>
